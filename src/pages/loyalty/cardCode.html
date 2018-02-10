@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Card</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only clear (click)="dismissPage()">
+        <ion-icon clear name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="grayBG">
+  <div class="qrCode">
+    <ion-card class="qrcodeCard">
+      <qr-code [value]="cardData.code" [size]="size"></qr-code>
+      <ion-list>
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="{{cardData.profileImage}}" onError="src='assets/PlaceHolder.png'">
+          </ion-avatar>
+          <h2>{{cardData.placeName}}</h2>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    <ion-card class="qrcodeCard padding">
+      <ion-list>
+        <ion-item>
+          <ion-avatar item-left>
+            <img src="https://cdn4.iconfinder.com/data/icons/gamification-1/256/--04-128.png">
+          </ion-avatar>
+          <h1>
+            <strong>{{totalPoint}} Points</strong>
+          </h1>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+    <ion-card>
+      <div *ngIf="!cardData.points">
+        <ion-list>
+          <ion-list-header>
+            <strong>History</strong>
+          </ion-list-header>
+          <ion-list>
+            <ion-item>
+              <h2>Point : 3</h2>
+              <p>{{ 1517459974 | dateT }}</p>
+            </ion-item>
+            <ion-item>
+                <h2>Point : 2</h2>
+                <p>{{ 1517459974 | dateT }}</p>
+              </ion-item>
+              <ion-item>
+                  <h2>Point : 4</h2>
+                  <p>{{ 1517459974 | dateT }}</p>
+                </ion-item>
+                <ion-item>
+                    <h2>Point : 4</h2>
+                    <p>{{ 1517459974 | dateT }}</p>
+                  </ion-item>
+          </ion-list>
+        </ion-list>
+
+      </div>
+
+    </ion-card>
+
+  </div>
+</ion-content>

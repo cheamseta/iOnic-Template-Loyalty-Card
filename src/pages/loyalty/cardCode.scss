@@ -1,0 +1,12 @@
+cardCode-page {
+    .qrCode {
+        vertical-align: middle;
+        height: 100%;
+    }
+    .qrcodeCard {
+        min-width: 250px;
+        max-width: 250px;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Coupons</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="grayBG card-background-page">
+    <div class="mainCardHolder">
+      <ion-card>
+        <ion-item>
+            <p>These are my coupons I have added</p>
+        </ion-item>
+      </ion-card>
+  <ion-card *ngFor="let feed of couponArray" class="mainCardHolder padding" (tap)="showRedeem(feed)">
+    <img-loader src="{{feed.image.path}}" useImg></img-loader>
+    <ion-card-content>
+      <ion-card-title>
+        {{feed.title}} 
+        <br/><ion-badge>{{feed.amount}}{{feed.type}} </ion-badge>
+      </ion-card-title>
+      <p><strong>Expire Date : {{feed.expiredDate | dateT}}</strong></p>
+    </ion-card-content>
+  </ion-card>
+    </div>
+</ion-content>

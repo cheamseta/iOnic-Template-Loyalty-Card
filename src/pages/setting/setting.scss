@@ -1,0 +1,36 @@
+profile-page {
+
+.card-background-page {
+
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .summaryDiscount {
+    height: 110px;
+  }
+
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+      text-shadow: 4px 4px 8px #000000;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+      text-shadow: 4px 4px 8px #000000;
+  }
+
+}
+
+}

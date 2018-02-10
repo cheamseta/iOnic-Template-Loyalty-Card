@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Reward List</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only clear (click)="dismissPage()">
+        <ion-icon clear name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="grayBG card-background-page">
+  <div class="mainCardHolder">
+    <ion-grid>
+      <ion-row>
+        <ion-col width-100>
+          <ion-card padding>
+            <button ion-button outline full>How to start ?</button>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col width-50>
+          <ion-card padding (click)="showClaimReward()">
+            <img src="https://cdn0.iconfinder.com/data/icons/travel-and-leisure/512/12-128.png" />
+            <p>Hello Movie 50pt</p>
+          </ion-card>
+        </ion-col>
+        <ion-col width-50 >
+          <ion-card padding>
+            <img src="https://cdn1.iconfinder.com/data/icons/all_google_icons_symbols_by_carlosjj-du/128/coupon_tag-r.png" />
+            <p>Crazy Shop 100pt</p>
+          </ion-card>
+        </ion-col>
+        <ion-col width-50>
+          <ion-card padding>
+            <img src="https://cdn4.iconfinder.com/data/icons/ballicons-2-free/100/box-128.png" />
+            <p>Bundle 250pt</p>
+          </ion-card>
+        </ion-col>
+        <ion-col width-50>
+          <ion-card padding>
+            <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/flower-128.png" />
+            <p>Flower 50pt</p>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

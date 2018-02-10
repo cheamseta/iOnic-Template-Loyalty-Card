@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Setting</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="grayBG card-background-page">
+  <div class="mainCardHolder">
+  <ion-card>
+    <ion-card-header>
+      <strong>Languages</strong>
+    </ion-card-header>
+    <ion-list radio-group>
+        <ion-item>
+            <ion-label>English</ion-label>
+            <ion-radio checked="true" value="en"></ion-radio>
+          </ion-item>
+      <ion-item>
+        <ion-label>Spanish</ion-label>
+        <ion-radio checked="false" value="sp"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card *ngIf="currentUserData">
+    <ion-list>
+      <button ion-item (click)="signOut()">
+          <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
+      Sign Out
+    </button>
+    </ion-list>
+  </ion-card>
+  </div>
+</ion-content>

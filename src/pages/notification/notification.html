@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Notification</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only clear (click)="closePage()">
+<ion-icon ios="ios-close" md="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="grayBG card-background-page">
+
+    <ion-list>
+        <ion-item *ngFor="let stt of notificationArray">
+          <ion-avatar item-start>
+            <img *ngIf="!stt.isRead" src="assets/notificationRed.jpg">
+            <img *ngIf="stt.isRead" src="assets/notification.png">
+          </ion-avatar>
+          <h2><strong>{{stt.usernam}}</strong> {{stt.action}}</h2>
+          <p>{{ stt.timestamp | dateT}}</p>
+        </ion-item>
+      </ion-list>
+
+</ion-content>

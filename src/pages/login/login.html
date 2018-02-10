@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Registration</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="grayBG card-background-page">
+  <div class="mainCardHolder">
+    <ion-card>
+      <img src="assets/login.png" />
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <strong>Login</strong>
+      </ion-card-header>
+      <ion-list>
+        <ion-item>
+          <ion-input type="text" [(ngModel)]="loginData.username" name="username" placeholder="Username or Email or Phone number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" [(ngModel)]="loginData.password" name="password" placeholder="Password"></ion-input>
+        </ion-item>
+      </ion-list>
+      <button ion-button full color="light" (click)="userLogin()">Login</button>
+    </ion-card>
+    <button ion-button full clear color="light" small (click)="recoverPassword()">Forget Password</button>
+
+    <ion-card>
+      <ion-card-header>
+        <strong>Email Sign up</strong>
+      </ion-card-header>
+      <ion-list>
+        <ion-item>
+          <ion-input type="text" placeholder="Email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" placeholder="Password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" placeholder="Confirm Password"></ion-input>
+        </ion-item>
+      </ion-list>
+      <button ion-button full color="light">Sign up</button>
+    </ion-card>
+    <button ion-button full color="light" clear small>Term & Conditions</button>
+  </div>
+</ion-content>

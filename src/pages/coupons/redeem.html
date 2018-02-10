@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Coupon</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only clear (click)="dismissPage()">
+        <ion-icon clear name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="grayBG">
+  <ion-card class="qrcodeCard padding">
+    <ion-list>
+      <ion-card-header>
+        <strong>Customer Information</strong>
+      </ion-card-header>
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="{{currentUserData.profileImage}}">
+        </ion-avatar>
+        <h1><strong>{{currentUserData.nickname}}</strong></h1>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card class="qrcodeCard padding">
+    <qr-code [value]="cardData.code" [size]="size"></qr-code>
+    <ion-card-header>
+      <strong>Redeem with this code</strong><br/>
+      <strong class="colorBlue">{{cardData.code}}</strong>
+    </ion-card-header>
+  </ion-card>
+  <ion-card class="qrcodeCard padding">
+    <ion-list>
+      <ion-item>
+        <ion-avatar item-left>
+          <img src="assets/discount.png">
+        </ion-avatar>
+        <h1><strong>{{cardData.amount}}{{cardData.type}}</strong></h1>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card class="qrcodeCard" padding>
+  <button full color="danger" ion-button outline (click)="removeAction()">Remove</button>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="grayBG card-background-page">
+  <div class="mainCardHolder">
+    <ion-card class="mainCardProfile">
+      <img-loader [src]="currentUserData.profileImage" useImg></img-loader>
+    </ion-card>
+    <ion-card>
+      <ion-list no-lines>
+        <button ion-button clear full large color="primary">
+          <strong>{{currentUserData.nickname.toUpperCase()}}<br/><small>@{{currentUserData.username}}</small></strong>
+        </button>
+      </ion-list>
+    </ion-card>
+    <ion-card>
+      <ion-list no-lines>
+          <button ion-button clear full large color="primary" (click)="showRewardPoint()">Total Points : 10</button>
+        </ion-list>
+    </ion-card>
+    <ion-card>
+      <ion-list>
+        <button ion-item icon-left large (click)="showRedeemHistory()">
+          <ion-icon ios="ios-time" md="md-time"></ion-icon>
+          My Redeems History
+        </button>
+      </ion-list>
+    </ion-card>
+  </div>
+</ion-content>

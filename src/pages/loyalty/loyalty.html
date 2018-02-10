@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Loyalty Cards</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="grayBG card-background-page">
+  <div class="padding">
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  </div>
+
+  <ion-card class="roundcard mainLoyaltyHolder padding" (click)="scanToIssueNewCard()">
+  <ion-card-title>
+    <h3>
+      <strong>Scan from a store to issue a new card</strong>
+    </h3>
+  </ion-card-title>
+  <span class="codeScan">
+    <img class="codeScan" src="assets/scan.png" />
+  </span>
+</ion-card>
+
+
+  <ion-card class="roundcard mainLoyaltyHolder padding" *ngFor="let card of loyaltyArray" [ngStyle]="{'background': card.backgroundColor}"
+    (tap)="showQRModal(card)">
+    <ion-card-title>
+      <img class="imgCode" src="assets/qrcode.jpg" />
+      <h1 [ngStyle]="{'color': card.textColor}">
+        <strong>{{card.placeName}}</strong>
+        <br/>
+        <small>Loyalty Card</small>
+      </h1>
+      <p>
+        <small [ngStyle]="{'color': card.textColor}">EXP: {{card.expiredDate | dateT}}</small>
+      </p>
+    </ion-card-title>
+    <span class="codePoster">
+      <img-loader [src]="card.imageUrl" useImg></img-loader>
+    </span>
+  </ion-card>
+</ion-content>
+<ion-fab left bottom>
+  <button ion-fab color="primary">
+    <ion-icon name="arrow-back"></ion-icon>
+  </button>
+</ion-fab>
+<ion-fab right bottom>
+  <button ion-fab color="primary">
+    <ion-icon name="arrow-forward"></ion-icon>
+  </button>
+</ion-fab>

@@ -1,0 +1,131 @@
+// http://ionicframework.com/docs/v2/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+body {
+  font-family: 'Avenir' !important;
+}
+
+.grayBG {
+  background: #393939;
+  color: #fff;
+}
+
+.colorBlue {
+  color: #393939;
+}
+
+.padding {
+  padding: 10px;
+}
+
+.codeScan {
+  padding : 80px;
+}
+
+.menuHeader {
+  background: #393939;
+  height: 200px;
+  overflow: hidden;
+}
+
+ion-row {
+  flex-wrap: wrap;
+}
+
+.headerCard {
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
+}
+
+.truncate {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-background-page {
+  .mainCardHolder {
+    min-width: 250px;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+  .mainCardProfile {
+    min-width: 200px;
+    max-width: 200px;
+    border-radius: 100px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #fff;
+  }
+  .mainLoyaltyHolder {
+    min-width: 250px;
+    max-width: 320px;
+    margin: auto;
+    margin-bottom: 25px;
+  }
+  ion-col {
+    text-align: center;
+  }
+}
+
+.point {
+        border-radius: 100px;
+        margin: auto;
+        width: 200px;
+        height : 200px;
+        margin-top : 20px;
+        margin-bottom: 20px;
+        vertical-align: middle;
+        background-color: #466087;
+  }
+
+  .point p{
+        color: #fff;
+        vertical-align: middle;
+        font-size: 45px;
+        padding: 20px;
+        text-align: center;
+  }
+
+/*==================================================
+ * Effect 2
+ * ===============================================*/
+ .effect2
+ {
+   border-color: #393939;
+   border-width: 2px;
+  box-shadow: 2px 2px 10px grey;
+ }

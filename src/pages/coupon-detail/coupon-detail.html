@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Coupon Detail</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only clear (click)="closePage()">
+        <ion-icon ios="ios-close" md="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="grayBG card-background-page">
+  <ion-card class="mainCardHolder padding">
+    <img-loader src="{{couponDetail.image.path}}" useImg></img-loader>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-avatar item-left>
+            <img-loader src="{{couponDetail.userProfile}}" useImg></img-loader>
+          </ion-avatar>
+          <h2>{{couponDetail.username}}</h2>
+          <button (tap)="likeDislikeAction()" ion-button item-right round color="danger" icon-left><ion-icon ios="ios-heart" md="md-heart"></ion-icon>{{couponDetail.likes.length}}</button>
+        </ion-item>
+      </ion-list>
+      <ion-card-title>
+        {{couponDetail.title}}
+      </ion-card-title>
+      <p>{{couponDetail.desc}} <br/><strong>Expire Date : {{couponDetail.expiredDate | dateT}}</strong></p>
+      <ion-grid *ngIf="!(couponDetail.saves | isContain)">
+        <ion-row>
+          <ion-col width-100><button ion-button full large round (click)="addCoupon(couponDetail.objectId)">Add {{couponDetail.amount}} {{couponDetail.type}} Coupon</button></ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-card-title>
+          Store Information
+        </ion-card-title>
+
+        <div class="padding">
+            <p><strong>Store : Starbuck</strong></p>
+            <p><strong>Phone Number : (+1) 000 0000 000</strong></p>
+            <p><strong>Address : California, USA</strong></p>
+        </div>
+
+      <img class="effect2 roundcard" src="https://maps.googleapis.com/maps/api/staticmap?center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&scale=2&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&key=AIzaSyCIh3b0WyqWSmGqOJ0KcBKOrwmIGQWAOeA"/>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-fab right bottom>
+    <button ion-fab color="light"><ion-icon name="share"></ion-icon></button>
+    <ion-fab-list side="left">
+      <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
+      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>

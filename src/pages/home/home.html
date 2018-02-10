@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Discounty</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only clear (click)="notification()">
+        <ion-icon ios="ios-notifications" md="md-notifications"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="grayBG card-background-page">
+  <div [ngSwitch]="segmentName">
+    <div *ngSwitchCase="'coupon'">
+      <ion-card>
+        <ion-item>
+          <strong>COUPONS</strong>
+        </ion-item>
+      </ion-card>
+      <ion-card *ngIf="feedArray.length <= 0 && isLoaded" class="mainCardHolder">
+        <img src="assets/empty.jpg" />
+        <ion-card-content>
+          <ion-card-title>
+            You have added all coupons. They are coming soon.
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card>
+      <ion-card *ngFor="let feed of feedArray" class="mainCardHolder padding">
+        <ion-list (tap)="showCouponDetail(feed)">
+          <ion-item>
+            <ion-avatar item-left>
+              <img-loader src="{{feed.userProfile}}" useImg></img-loader>
+            </ion-avatar>
+            <h2>{{feed.username}}</h2>
+            <button *ngIf="feed.likes | isContain" ion-button clear color="danger" icon-left item-right>
+              <ion-icon ios="ios-heart" md="md-heart"></ion-icon>{{feed.likes.length}}</button>
+            <button *ngIf="!(feed.likes | isContain)" ion-button clear icon-left item-right>
+              <ion-icon ios="ios-heart" md="md-heart"></ion-icon>0</button>
+          </ion-item>
+        </ion-list>
+        <img-loader spinner="true" height="100px" src="{{feed.image.path}}" useImg (tap)="showCouponDetail(feed)"></img-loader>
+        <ion-card-content>
+          <ion-card-title>
+            {{feed.title}}
+            <br/>
+            <ion-badge item-left large>{{feed.amount}} {{feed.type}}</ion-badge>
+          </ion-card-title>
+          <p class="padding">{{feed.desc}}
+            <br/>
+            <strong>Expire Date : {{feed.expiredDate | dateT}}</strong>
+          </p>
+          <ion-grid *ngIf="!(feed.saves | isContain)">
+            <ion-row>
+              <ion-col width-100>
+                <button ion-button full round (tap)="addCoupon()">Add To My Coupon</button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
