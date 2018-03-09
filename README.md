@@ -7,12 +7,12 @@ This project is dedicated for "អូនស្អាតរបស់បង"
 
 this project shows method how use
 
-++ Loyalty card design View
-++ User Login View
-++ User Profile View
-++ Coupon View
-++ QR-code to redeem View
-++ Coupon saved view
+++ Loyalty card design View<br/>
+++ User Login View<br/>
+++ User Profile View<br/>
+++ Coupon View<br/>
+++ QR-code to redeem View<br/>
+++ Coupon saved view<br/>
 
 Get started
 
